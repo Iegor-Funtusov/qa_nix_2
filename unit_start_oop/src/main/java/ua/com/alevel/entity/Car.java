@@ -7,6 +7,12 @@ public class Car extends BaseEntity {
     private CarType carType;
     private String ownerId;
 
+    public Car() {}
+
+    public Car(CarType carType) {
+        this.carType = carType;
+    }
+
     public CarType getCarType() {
         return carType;
     }
