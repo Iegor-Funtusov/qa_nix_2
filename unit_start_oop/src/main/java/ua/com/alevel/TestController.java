@@ -17,6 +17,9 @@ public class TestController {
     private OwnerService ownerService = new OwnerService();
 
     public void start() {
+
+        TestClass testClass = new TestClass("", "");
+
 //        Owner owner = new Owner();
 //        owner.setName("test1");
 //        ownerService.create(owner);
@@ -53,27 +56,27 @@ public class TestController {
 //        cars = carService.findAll();
 //        cars.forEach(System.out::println);
 
-        List<BaseEntity> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            Random random = new Random();
-            int r = random.nextInt(2);
-            if (r == 0) {
-                list.add(new Owner());
-            } else {
-                list.add(new Car());
-            }
-        }
-
-        for (BaseEntity baseEntity : list) {
-            System.out.println("baseEntity = " + baseEntity.getClass().getSimpleName());
-            if (baseEntity instanceof Owner) {
-                Owner owner = (Owner) baseEntity;
-                System.out.println("owner = " + owner);
-            }
-            if (baseEntity instanceof Car) {
-                Car car = (Car) baseEntity;
-                System.out.println("car = " + car);
-            }
-        }
+//        List<BaseEntity> list = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            Random random = new Random();
+//            int r = random.nextInt(2);
+//            if (r == 0) {
+//                list.add(new Owner());
+//            } else {
+//                list.add(new Car());
+//            }
+//        }
+//
+//        for (BaseEntity baseEntity : list) {
+//            System.out.println("baseEntity = " + baseEntity.getClass().getSimpleName());
+//            if (baseEntity instanceof Owner) {
+//                Owner owner = (Owner) baseEntity;
+//                System.out.println("owner = " + owner);
+//            }
+//            if (baseEntity instanceof Car) {
+//                Car car = (Car) baseEntity;
+//                System.out.println("car = " + car);
+//            }
+//        }
     }
 }
