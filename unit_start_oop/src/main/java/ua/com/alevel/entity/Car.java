@@ -2,6 +2,8 @@ package ua.com.alevel.entity;
 
 import ua.com.alevel.entity.type.CarType;
 
+import java.util.Date;
+
 public class Car extends BaseEntity {
 
     private CarType carType;
@@ -11,6 +13,7 @@ public class Car extends BaseEntity {
 
     public Car(CarType carType) {
         this.carType = carType;
+        super.setCreated(new Date());
     }
 
     public CarType getCarType() {
