@@ -10,7 +10,7 @@ public class ListTest {
     private static final int SIZE = 1_000_000;
 
     public void run() {
-        List<Integer> arrayList = new ArrayList<>();
+        List<Integer> arrayList = new ArrayList<>(1000);
         List<Integer> linkedList = new LinkedList<>();
 
         long start = System.currentTimeMillis();
