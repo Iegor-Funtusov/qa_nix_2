@@ -30,12 +30,14 @@ public class ExceptionTest {
     private void test2() {
         try {
 //            System.exit(1);
-            System.out.println("p = " + p.length());
-            String s = "123n";
-            int i1 = Integer.parseInt(s);
+//            System.out.println("p = " + p.length());
+//            String s = "123n";
+//            int i1 = Integer.parseInt(s);
             int i = 10 / 0;
         } catch (ArithmeticException e) {
             System.out.println("ArithmeticException = " + e.getMessage());
+            throw new ArithmeticException(e.getMessage());
+//            e.printStackTrace();
         } catch (NumberFormatException e) {
             System.out.println("NumberFormatException = " + e.getMessage());
         } catch (NullPointerException e) {
@@ -52,6 +54,7 @@ public class ExceptionTest {
 //                System.out.println("NumberFormatException = " + e.getMessage());
 //            }
 //        }
+        System.out.println("next !!!");
     }
 
     private void test3() throws Exception {

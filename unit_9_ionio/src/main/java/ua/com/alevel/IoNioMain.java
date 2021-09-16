@@ -16,7 +16,8 @@ public class IoNioMain {
 //        service.readDir(FileType.FILE_DIR.getPath());
 //        service.updateDir(FileType.FILE_DIR.getPath());
 //        service.deleteDir(FileType.FILE_DIR.getPath());
-        ExceptionTest exceptionTest = new ExceptionTest();
-        exceptionTest.run();
+//        ExceptionTest exceptionTest = new ExceptionTest();
+//        exceptionTest.run();
+        new ExceptionExecutor().run();
     }
 }
