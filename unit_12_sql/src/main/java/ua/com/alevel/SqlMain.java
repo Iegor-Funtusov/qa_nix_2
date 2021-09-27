@@ -8,7 +8,8 @@ public class SqlMain {
         CrudSql sql = new CrudSql();
 //        create(sql);
 //        findAll(sql);
-        findById(sql);
+//        findById(sql);
+        createBook(sql);
     }
 
     private static void create(CrudSql sql) {
@@ -27,6 +28,15 @@ public class SqlMain {
 
     private static void findById(CrudSql sql) {
         User user = sql.findById(6);
+        System.out.println("user = " + user);
+    }
+
+    private static void createBook(CrudSql sql) {
+        User user = sql.findById(6);
+        Book book = new Book();
+        book.setUser_id(user.getId());
+        book.setName("test book");
+        sql.createBook(book);
         System.out.println("user = " + user);
     }
 }

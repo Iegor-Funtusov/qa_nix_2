@@ -10,6 +10,7 @@ public class CrudSql {
     private Statement statement;
 
     private static final String CREATE_USER = "insert into user values(default,?,?)";
+    private static final String CREATE_BOOK = "insert into books values(default,?,?)";
     private static final String UPDATE_BY_ID_QUERY = "update user set name = ?, age = ? where id = ?";
     private static final String FIND_ALL_USER_QUERY = "select * from user";
     private static final String FIND_USER_BY_ID_QUERY = "select * from user where id = ";
@@ -35,6 +36,19 @@ public class CrudSql {
             preparedStatement = connection.prepareStatement(CREATE_USER);
             preparedStatement.setString(1, user.getName());
             preparedStatement.setInt(2, user.getAge());
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            System.out.println("problem: = " + e.getMessage());
+        }
+    }
+
+    public void createBook(Book book) {
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = connection.prepareStatement(CREATE_BOOK);
+            preparedStatement.setString(1, book.getName());
+            preparedStatement.setInt(2, book.getUser_id());
             preparedStatement.executeUpdate();
             preparedStatement.close();
         } catch (SQLException e) {
