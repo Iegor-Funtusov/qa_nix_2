@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment'
 import {Observable} from "rxjs";
 import {UserModel} from "./user.model";
 import {map} from "rxjs/operators";
+import {UserCreateModel} from "./user-create.model";
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,14 @@ export class UserApiService {
 
   delete(id: string):Observable<any> {
     return this._http.delete(this.url + '/users/' + id, {}).pipe(
+      map((res: any) => {
+        return res.data;
+      })
+    )
+  }
+
+  create(user: UserCreateModel) {
+    return this._http.post(this.url + '/users/', user).pipe(
       map((res: any) => {
         return res.data;
       })

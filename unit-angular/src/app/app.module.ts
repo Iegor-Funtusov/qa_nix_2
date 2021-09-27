@@ -7,6 +7,7 @@ import { UserItemsComponent } from './user/user-items/user-items.component';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { UserNewComponent } from './user/user-new/user-new.component';
 import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
